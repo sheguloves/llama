@@ -120,7 +120,7 @@ class Llama:
         model.load_state_dict(checkpoint, strict=False)
         print(f"Loaded in {time.time() - start_time:.2f} seconds")
         with open(Path(ckpt_dir) / "output.txt", "a+") as f:
-            f.write(f"Loaded in {time.time() - start_time:.2f} seconds")
+            f.write(f"Loaded in {time.time() - start_time:.2f} seconds\n")
 
         return Llama(model, tokenizer)
 
