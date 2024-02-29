@@ -119,6 +119,7 @@ class Llama:
         model = Transformer(model_args)
         model.load_state_dict(checkpoint, strict=False)
         print(f"Loaded in {time.time() - start_time:.2f} seconds")
+        print(f"Current Path: {Path('.').cwd()}")
         with open(Path(ckpt_dir) / "output.txt", "a+") as f:
             f.write(f"Loaded in {time.time() - start_time:.2f} seconds\n")
 

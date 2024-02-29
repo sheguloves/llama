@@ -11,6 +11,7 @@ from llama import Llama, Dialog
 def main(
     ckpt_dir: str,
     tokenizer_path: str = "tokenizer.model",
+    model_parallel_size: int = 1,
     temperature: float = 0.6,
     top_p: float = 0.9,
     max_seq_len: int = 512,
@@ -37,6 +38,7 @@ def main(
         tokenizer_path=tokenizer_path,
         max_seq_len=max_seq_len,
         max_batch_size=max_batch_size,
+        model_parallel_size=model_parallel_size,
     )
 
     dialogs: List[Dialog] = [
